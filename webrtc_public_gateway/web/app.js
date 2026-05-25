@@ -106,6 +106,9 @@
           request: 'join',
           ptype: 'subscriber',
           room: roomId,
+          // Legacy Janus VideoRoom requires top-level `feed`.
+          feed: feedId,
+          // Newer Janus multistream API uses `streams`.
           streams: [{ feed: feedId }],
         };
         if (roomPin) {
